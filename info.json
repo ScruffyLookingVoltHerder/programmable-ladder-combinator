@@ -1,0 +1,9 @@
+{
+  "name": "programmable-ladder-combinator",
+  "version": "0.1.0",
+  "title": "PLC (programmable ladder combinator)",
+  "author": "spacehitchhiker42",
+  "factorio_version": "1.1",
+  "dependencies": ["base >= 1.1"],
+  "description": "This mod adds in a combinator that can be programmed in Ladder Logic like a real-world industrial PLC"
+}
