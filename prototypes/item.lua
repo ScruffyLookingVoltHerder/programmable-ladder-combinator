@@ -1,13 +1,13 @@
 data:extend({
 
     {
-        type = "item",
-        name = "brick-ladder-combinator",
+        type = "item-with-tags",
+        name = "brick-PLC",
         icon = "__programmable-ladder-combinator__/graphics/icons/BrickPLC.png",
         icon_size = 32,
         subgroup = "circuit-network",
         stack_size = 100,
-        
+        place_result = "brick-PLC"
         },
         
 })
@@ -16,7 +16,7 @@ data:extend({
 
     {
         type = "item",
-        name = "modular-ladder-combinator",
+        name = "modular-PLC",
         icon = "__programmable-ladder-combinator__/graphics/icons/ModularPLC.png",
         icon_size = 32,
         subgroup = "circuit-network",
@@ -53,3 +53,17 @@ data:extend({
             },
     
         })
+
+        data:extend({
+        {
+            type = 'item',
+            name = "PLC-iopoint",
+            icon_size = 32,
+            icon = "__programmable-ladder-combinator__/graphics/icons/invisible.png",
+            subgroup = 'circuit-network',
+            order = '[logistic]-b[elt]',
+            place_result = "PLC-iopoint",
+            stack_size = 50,
+            flags = { "hidden", "hide-from-bonus-gui" }
+        },
+    })

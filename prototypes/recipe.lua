@@ -1,25 +1,25 @@
 data:extend({
     {
         type = "recipe",
-        name = "brick-ladder-combinator",
+        name = "brick-PLC",
         enabled = "true",
         ingredients = 
         {
           {"decider-combinator",2},{"arithmetic-combinator",2},{"copper-cable",1},
         },
-        result = "brick-ladder-combinator"
+        result = "brick-PLC"
       },
 
 
       {
         type = "recipe",
-        name = "modular-ladder-combinator",
+        name = "modular-PLC",
         enabled = "true",
         ingredients = 
         {
           {"decider-combinator",8},{"arithmetic-combinator",8},{"electronic-circuit",4},
         },
-        result = "modular-ladder-combinator"
+        result = "modular-PLC"
       },
 
 

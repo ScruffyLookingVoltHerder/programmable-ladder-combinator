@@ -8,7 +8,7 @@ data:extend({
         {
           {
               type = "unlock-recipe",
-              recipe = "brick-ladder-combinator"
+              recipe = "brick-PLC"
           },
         },
         prerequisites = {"circuit-network",},
@@ -37,7 +37,7 @@ data:extend({
         },
         {
           type = "unlock-recipe",
-          recipe = "modular-ladder-combinator"
+          recipe = "modular-PLC"
       },
       },
       prerequisites = {"PLCTech",},
