@@ -67,3 +67,17 @@ data:extend({
             flags = { "hidden", "hide-from-bonus-gui" }
         },
     })
+
+    data:extend({
+        {
+            type = 'item',
+            name = "PLC-event-token",
+            icon_size = 6,
+            icon = "__programmable-ladder-combinator__/graphics/icons/iopoint.png",
+            subgroup = 'circuit-network',
+            order = '[logistic]-b[elt]',
+            place_result = "PLC-iopoint",
+            stack_size = 50,
+            flags = { "hidden", "hide-from-bonus-gui" }
+        },
+    })

@@ -82,3 +82,38 @@ data:extend({  {
 }
 })
 
+
+local removeKey = "__REMOVE__"
+local entity = table.deepcopy(data.raw["container"]["steel-chest"])
+overwriteContent(entity, {
+	name = "PLC-CONNECTION",
+	collision_box = removeKey, -- {{0, 0}, {0, 0}},
+	selection_box = removeKey, --{{-0.25, -0.25}, {0.25, 0.25}},
+	collision_mask = {},
+	order="a",
+	circuit_wire_max_distance = 64,
+	draw_circuit_wires = false,
+	draw_copper_wires = false,
+	flags = {
+		"placeable-player",
+		"placeable-off-grid",
+		"not-on-map",
+		"not-blueprintable",
+		"hide-alt-info",
+		"not-deconstructable",
+		"not-upgradable",
+		"hidden",
+		"not-rotatable"
+	},
+	picture = {
+		filename = "__programmable-ladder-combinator__/graphics/entity/empty4x1.png",
+		priority = "extra-high",
+		width = 1,
+		height = 1,
+		shift = {0, 0}
+	},
+	circuit_connector_sprites = removeKey,
+	fast_replaceable_group = removeKey,
+}, removeKey)
+entity.minable.result = nil
+data:extend({	entity })
