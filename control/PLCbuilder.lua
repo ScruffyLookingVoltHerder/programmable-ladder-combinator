@@ -61,6 +61,8 @@ local poles=PLCbuilder.buildPolesFromTo(iogroup_pos,built[2].position,hidden_sur
 
 PLCbuilder.connectWires(outer_points[1],poles[1])
 
+PLCbuilder.connectWires(built[2],poles[#poles])
+
 iogroup.iopoint_0.inserter=built[2]
 
 
@@ -75,9 +77,13 @@ fish1 = surface.create_entity
   stack={name="raw-fish"}
 }
 
-script.register_on_entity_destroyed(fish1)
+
+
+local num = script.register_on_entity_destroyed(fish1)
 
 local test=1
+
+iogroup_surface.print("fish: "..num)
 
 return iogroup
 end
@@ -182,7 +188,7 @@ function PLCbuilder.create_outer_io_points(iogroup_pos, iogroup_dir,iogroup_surf
 
       end
  
-     iogroup_surface.print(iopoints_found.." previous IO found")
+     
 
       --Create new IOpoints if no ghosts or existing ones found
       if iopoint_0_tmp == nil then

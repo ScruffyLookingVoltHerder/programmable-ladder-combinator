@@ -29,7 +29,7 @@ PLCbuilder.initglobal()
 
     }
 
-entity.surface.print("PLC created")
+
 
 
    
