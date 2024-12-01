@@ -1,11 +1,11 @@
-local Event = require('__stdlib__/stdlib/event/event')
+local Event = require('__stdlib2__/stdlib/event/event')
 local brickplc = require(".control.brick-plc")
 --test
 function init_tables()
     --Create global tables
-    global.Brick_PLCs = global.Brick_PLCs or {}
-    global.Modular_PLCs = global.Modular_PLCs or {}
-    global.Remote_IOs = global.Remote_IOs or {}
+    storage.Brick_PLCs = storage.Brick_PLCs or {}
+    storage.Modular_PLCs = storage.Modular_PLCs or {}
+    storage.Remote_IOs = storage.Remote_IOs or {}
 end
 
 

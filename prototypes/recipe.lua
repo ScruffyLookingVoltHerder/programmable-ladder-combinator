@@ -2,24 +2,29 @@ data:extend({
     {
         type = "recipe",
         name = "brick-PLC",
-        enabled = "true",
+        enabled = false,
         ingredients = 
         {
-          {"decider-combinator",2},{"arithmetic-combinator",2},{"copper-cable",1},
+          {type = "item", name = "decider-combinator", amount = 2},
+          {type = "item", name = "arithmetic-combinator", amount = 2},
+          {type = "item", name = "copper-cable", amount = 4},
         },
-        result = "brick-PLC"
+         results = {{type = "item", name = "brick-PLC", amount = 1}} 
       },
 
 
       {
         type = "recipe",
         name = "modular-PLC",
-        enabled = "true",
+        enabled = false,
         ingredients = 
         {
-          {"decider-combinator",8},{"arithmetic-combinator",8},{"electronic-circuit",4},
+          {type = "item", name = "decider-combinator", amount = 2},
+          {type = "item", name = "arithmetic-combinator", amount = 2},
+          {type = "item", name = "electronic-circuit", amount = 2},
         },
-        result = "modular-PLC"
+
+        results = {{type = "item", name = "modular-PLC", amount = 1}} 
       },
 
 
@@ -27,24 +32,27 @@ data:extend({
       {
         type = "recipe",
         name = "remote-io",
-        enabled = "true",
+        enabled = false,
         ingredients = 
         {
-          {"constant-combinator",4},{"electronic-circuit",2}
+          {type = "item", name = "constant-combinator", amount = 4},
+          {type = "item", name = "decider-combinator", amount = 4},
         },
-        result = "remote-io"
+        results = {{type = "item", name = "remote-io", amount = 1}} 
       },
 
 
       {
         type = "recipe",
         name = "fieldbus-adapter",
-        enabled = "true",
+        enabled = false,
         ingredients = 
         {
-          {"constant-combinator",1},{"advanced-circuit",4}
+          {type = "item", name = "constant-combinator", amount = 1},
+          {type = "item", name = "advanced-circuit", amount = 4},
+          
         },
-        result = "fieldbus-adapter"
+        results ={{type = "item", name = "fieldbus-adapter", amount = 1}}  
       },
 
 })

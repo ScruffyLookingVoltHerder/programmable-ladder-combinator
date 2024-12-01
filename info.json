@@ -4,6 +4,6 @@
   "title": "PLC (programmable ladder combinator)",
   "author": "scruffy-looking volt-herder",
   "factorio_version": "2.0",
-  "dependencies": ["base >= 1.1","stdlib"],
+  "dependencies": ["base >= 1.1","stdlib2"],
   "description": "This mod adds in a combinator that can be programmed in Ladder Logic like a real-world industrial PLC"
 }

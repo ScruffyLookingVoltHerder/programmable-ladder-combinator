@@ -32,8 +32,8 @@ iogroup.iopoint_2.outer_point=outer_points[3]
 iogroup.iopoint_3.outer_point=outer_points[4]
 
 
-global.spirals[force.name] = global.spirals[force.name] or {}
-local spiral = global.spirals[force.name]
+storage.spirals[force.name] = storage.spirals[force.name] or {}
+local spiral = storage.spirals[force.name]
 local index=1
 --test
 repeat
@@ -79,7 +79,7 @@ fish1 = surface.create_entity
 
 
 
-local num = script.register_on_entity_destroyed(fish1)
+local num = script.register_on_object_destroyed(fish1)
 
 local test=1
 
@@ -302,7 +302,7 @@ function PLCbuilder.remove_iogroup(iogroup, create_ghosts)
       end
 
 
-      local spiral = global.spirals[iogroup.force.name]
+      local spiral = storage.spirals[iogroup.force.name]
 
       spiral[iogroup.spiral_index]=nil
 
@@ -338,10 +338,10 @@ end
 
 
 function PLCbuilder.initglobal()
-  global.BrickPLCs = global.Brick_PLCs or {}
-  global.Modular_PLCs = global.Modular_PLCs or {}
-  global.Remote_IOs = global.Remote_IOs or {}
-  global.spirals = global.spirals or {}
+  storage.BrickPLCs = storage.Brick_PLCs or {}
+  storage.Modular_PLCs = storage.Modular_PLCs or {}
+  storage.Remote_IOs = storage.Remote_IOs or {}
+  storage.spirals = storage.spirals or {}
 
 end
 

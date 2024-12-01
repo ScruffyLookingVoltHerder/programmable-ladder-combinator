@@ -1,3 +1,18 @@
+function overwriteContent(originalTable,newContent,removeRef)
+	if originalTable == nil then
+		err("could not overwrite content of nil with new content: "..serpent.block(newContent))
+		return
+	end
+	for k,d in pairs(newContent) do
+		if d == removeRef then
+			originalTable[k]=nil
+		else
+			originalTable[k]=d
+		end
+	end
+end
+
+
 
 local iopoint_sprite
 iopoint_sprite = {
@@ -14,7 +29,7 @@ data:extend({ {
     type = "lamp",
     name = "PLC-iopoint",
     collision_box = { { -0.1, -0.1 }, { 0.1, 0.1 } },
-    collision_mask = {},
+    collision_mask = {layers={}},
     selection_box = { { -0.1, -0.1 }, { 0.1, 0.1 } },
     selection_priority = 70,
     minable = nil,
@@ -77,7 +92,7 @@ data:extend({  {
     collision_box = { { -0.45, -0.45 }, { 0.45, 0.45 } },
     selection_box = { { -0.6, -0.6 }, { 0.6, 0.6 } },
     selection_priority = 60,
-    collision_mask = { "floor-layer", "object-layer", "water-tile" },
+    collision_mask = {layers = {item = true, meltable = true, object = true, player = true, water_tile = true, is_object = true, is_lower_object = true}},
     flags = { "placeable-neutral", "player-creation" }
 }
 })
@@ -89,7 +104,7 @@ overwriteContent(entity, {
 	name = "PLC-CONNECTION",
 	collision_box = removeKey, -- {{0, 0}, {0, 0}},
 	selection_box = removeKey, --{{-0.25, -0.25}, {0.25, 0.25}},
-	collision_mask = {},
+	collision_mask = {layers={}},
 	order="a",
 	circuit_wire_max_distance = 64,
 	draw_circuit_wires = false,
@@ -102,7 +117,6 @@ overwriteContent(entity, {
 		"hide-alt-info",
 		"not-deconstructable",
 		"not-upgradable",
-		"hidden",
 		"not-rotatable"
 	},
 	picture = {

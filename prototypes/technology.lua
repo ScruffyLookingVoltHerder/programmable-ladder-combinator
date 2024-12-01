@@ -65,7 +65,7 @@ data:extend({
       },
 
     },
-    prerequisites = {"PLCTech","FieldBusTech","advanced-electronics"},
+    prerequisites = {"PLCTech","FieldBusTech","advanced-circuit"},
     unit =
     {
       count = 150,

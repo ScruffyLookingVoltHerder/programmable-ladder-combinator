@@ -1,4 +1,4 @@
-local Event = require('__stdlib__/stdlib/event/event')
+local Event = require('__stdlib2__/stdlib/event/event')
 local PLCbuilder = require("PLCbuilder")
 local filter="brick%-PLC"
 
@@ -23,7 +23,7 @@ PLCbuilder.initglobal()
   
 
     --Add to Global Table
-    global.Brick_PLCs[entity.unit_number] = {
+    storage.Brick_PLCs[entity.unit_number] = {
       entity = entity,
       iogroup=iogroup
 
@@ -39,11 +39,11 @@ function remove(event, create_ghosts)
   PLCbuilder.initglobal()
 local entity=event.entity
 
-local PLC=global.Brick_PLCs[entity.unit_number]
+local PLC=storage.Brick_PLCs[entity.unit_number]
 
 PLCbuilder.remove_iogroup(PLC.iogroup, create_ghosts)
 
-global.Brick_PLCs[entity.unit_number]=nil
+storage.Brick_PLCs[entity.unit_number]=nil
 
 end
 
@@ -127,17 +127,5 @@ end
 
 end)
 
-function destroyed(event)
-
-
- 
-
-local test=0
-
-end
-
-
-
-Event.register(defines.events.on_entity_destroyed, destroyed)
 
 
