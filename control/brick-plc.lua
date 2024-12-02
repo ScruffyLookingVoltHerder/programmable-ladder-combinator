@@ -30,7 +30,7 @@ PLCbuilder.initglobal()
     }
 
 
-
+local test=0
 
    
 end
