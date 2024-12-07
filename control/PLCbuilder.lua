@@ -46,13 +46,13 @@ iogroup.spiral_index=index
 
 local spiral_pos=PLCbuilder.spiral(index)
 
-spiral_pos.x=spiral_pos.x*9
-spiral_pos.y=spiral_pos.y*9
+spiral_pos.x=spiral_pos.x*12
+spiral_pos.y=spiral_pos.y*12
 
 
 local hidden_surface=PLCbuilder.plc_surface(force)
 
-local bp_string="0eNrtWl1v2jAU/S9+nZnijxCCtKc97W3vFUIB3NZSPpgx3aqK/7577YRUHS2KC6OkUR84dezja58TxzfOE1nkW7U2urRk+kT0sio3ZHrzRDb6rsxyLCuzQpEpwSs2K+1oWRULXWa2MmRHiS5X6g+Zsh090CYz2t4Xyurl4VZ8N6NElVZbrXy37p/HebktFsoALW2oNkWW5yNtqnKkcrW0BjjXVa4IJetqAwRViR0D6Yh/jSl59GCHcb0g5XvSQq30tjhKKBpCcZhQBER5LEjZMchjMcb0LSHfmMQI+Cg2sqbK5wt1nz1oaAHVNhCQdn55jkHExhOU3OrcKvOy1D6uMZAHbewW/NLOnvPPSELJL7gA4UNhWZnCVYJw15lx4U7JN1ewRdc66zWGOkp+Z5QqwzsQRzv42ZV8Bn+HFBuHKsb6pZhRq6vQK6FvL3v/Khbt1wDQa6WNV4RMJ4fVa2nncHml91LearOx83b1PTJilS3vcREGBwDNvHEXmUaUVGsFg3ZRkC/Qstra9bYz98H5mXT0c9TTFejMfv5xKj+nnf3MPpWfWdTR0Gx4pF7Y0ox19fQnszTvZulTOPo1qURXqT7X05TJblJFZ5SqY25xwY0qGzaqcGUcqFfUL72uJxVkSWAu6BU7vhieSz8x6Of0mwTqx/qs39Wsl2lg5nrpu48Nu373vjc0URv0+xj6sbCs5NLy8UE+Jx8Py1R6Ld+1vATkIixXGO69D7F14TJMPjbcex9AvPg9p9+vHX6HHiuK/578fz+nCeKTqZSEfk7wykk9nwQfJPJdL9918tAErGeelafyrIiCz/Z6ajHBAnPEnllMnMxiPPSora8OE2FZbM8Mxk9mMBl6QNhXg8VheXbPDMZOZrDxOz7rfGX3LZLAzzrdXnFGyW9IyXC2bxhldEzZjDqU1IjTmPIapTWKsbRGYo8guUDI4aJ0FRHBXtbDGArjGkEhQgHdMOH6cTCuIaeMuVYOjmvYECCCiUQI3VDhO5BY6mkTiGniqBJoklJZI+7DT+Eyi/zoGGLeYInRYG34gXLpy6GIinoOEhxRjaELxK5OinhCBY4PqCnshhzGiYTHlsMcsfQYByb8wCCfZoiRB+mQp8YcebjH+0lzuB4/ZF7tDCftZGDVZjaATiIPjgt/qKjnlrcxCFQMniYtlr7+s9iwS88JntFWFWC49kNvSh7gnnUmi8c8lWkayyRN4kTsdn8Bl2c12g=="
+local bp_string="0eNrtXNtu40YM/Zd5bCeFhhzJloE+7VMfin7AIjDsRLsREMuuLKcNAv97yaEcN7t2siKcaHVBgORkxOFweJF4ZMlPZnm/yzZlXlRm9mTym3WxNbPPT2abfy0W9zxWLFaZmZlFmVd3q6zKb65u1qtlXiyqdWn21uTFbfavmbm9PTGL9VWLojo9B/bX1mRFlVd5JsuGfx7nxW61zEpSal9TZM1mvaW564JXJH1X/rfYmkcBtMxtXmY3ctxbVlGV6/v5MrtbPOQ0nyZt5fj2JSZDDruy5kt+X2Xlt6PV44bNesjLakc7frZTPHDlaeRvOkCbocFiXa6CEBm/WZTB+Jn5PQzs2PPBeQenvKm8zG716vFN9X81VX5NP3te4pvowVHzbknRC5H4PmiJhCw5pQLt6/n3vTZslgBHtXM6fJs/Z8OXvNxW82NCv+G0bHFzx5lNSURq5od0NbPImvUmK2XzM/MrzVzvqs2use6TLvYNC8S9LJDelMSf71kQino7VxJxs3i1GC43hsvMkqann3NnHwe9PP1MmqXz+cvzOf90Mru7cn2e/tD1+bXLc6rtz6DP/dnXMsuKTmSAi7T9FQyjv3JO6yD8WRx05V566JcLewi0LSiMLegPV7zqlHK26lEbMuxXyP7oSBvqvJI2wEgbWioxLdHDfkWsMxWmZXowEKbnJkoH4U/joPduhKZKMgy9JsMdIkOpttePhkGGQM0W3UDIEDhtZ+3GzrqdTg1A2am5sVNrKWKobEWigfRq4JUOckPp1SBW3riOWr5vjePnFrSTRNmHDKYNmSgdNJRGdqps0z7+mo/j3RnaSaqMV9SveHXlsQmMdD31x5cXjOVFizlduKJ+hasz1QW69n4w3T0qCeJQ+CF63Z3qqO0b1TCyH1pKy12hz9y1Ox8zoJa9DuWJItSy14E8k4Za9ooje23njjVq+SuM/LWdiHklg8WRwbYUMCWHhZHDthQwJYsdzPNEXslih/JEmleyWOg1i+0OD/JNeSzWAYw//JT96T0jFl/MoVpiOZR3pRu+rcjPi/Qx4fzFEk5LRON+0ZpPF3Noqmti4349inYxf8YNWRy05k/ohj+driUdyuvwcaNvPDn5RnWMDV7KJg3X1vxDfuV0++yss2jdtQ3IpTUE6+gXQSA4fUZkrMCYBuMa0SBDJD0+TGdE0zFAz9ATjEl/EgYTQpMgmbDkpB70DFmSjlkQoyZsySQsOuX1sYYxQ141ZdkoyKYsGwWBANMAaYRUgeyLMUmjYM+YF2QLrRPdzrMfxFAXy/JBJmEsruDDFrzIsOGEg8yUrREnsCjvIsinJONlGxDWrZ3LPq3nArvKi83AvgJxUcDUptWY5BORCTaI7yDYIHYKrkM2YRmJKZJnLEKQwRB1lAixDeiDPGH837hnHOSR5evgsn+oqANm2zA5YJotewzYi53IdqLYiWwbip2CxU4+bFHs9GynFzs92+nFHhoiLDZ4tvM47hkHeeS5shf+w3YGHB9z1/O6XtaNI5EJ6QnH/IrhkGBUKnmVraiyjt95Zc0DnatDXcUJpD5NY5/CNPHRfv8fZ1/wWg=="
 
 local built=PLCbuilder.build_blueprint(bp_string,spiral_pos,force)
 
@@ -68,24 +68,37 @@ iogroup.iopoints[4].common_change_combinator = PLCbuilder.find_CC(built,{"C","4"
 
 
 -- Combinators for detecting individual point changes
-iogroup.iopoints[1].red_change_combinator = PLCbuilder.find_CC(built,{"I","1","red"})
-iogroup.iopoints[1].grn_change_combinator = PLCbuilder.find_CC(built,{"I","1","green"})
-iogroup.iopoints[2].red_change_combinator = PLCbuilder.find_CC(built,{"I","2","red"})
-iogroup.iopoints[2].grn_change_combinator = PLCbuilder.find_CC(built,{"I","2","green"})
-iogroup.iopoints[3].red_change_combinator = PLCbuilder.find_CC(built,{"I","3","red"})
-iogroup.iopoints[3].grn_change_combinator = PLCbuilder.find_CC(built,{"I","3","green"})
-iogroup.iopoints[4].red_change_combinator = PLCbuilder.find_CC(built,{"I","4","red"})
-iogroup.iopoints[4].grn_change_combinator = PLCbuilder.find_CC(built,{"I","4","green"})
+iogroup.iopoints[1].red_change_combinator = PLCbuilder.find_CC(built,{"M","1","red"})
+iogroup.iopoints[1].grn_change_combinator = PLCbuilder.find_CC(built,{"M","1","green"})
+iogroup.iopoints[2].red_change_combinator = PLCbuilder.find_CC(built,{"M","2","red"})
+iogroup.iopoints[2].grn_change_combinator = PLCbuilder.find_CC(built,{"M","2","green"})
+iogroup.iopoints[3].red_change_combinator = PLCbuilder.find_CC(built,{"M","3","red"})
+iogroup.iopoints[3].grn_change_combinator = PLCbuilder.find_CC(built,{"M","3","green"})
+iogroup.iopoints[4].red_change_combinator = PLCbuilder.find_CC(built,{"M","4","red"})
+iogroup.iopoints[4].grn_change_combinator = PLCbuilder.find_CC(built,{"M","4","green"})
+
+--combinators for inputs
+iogroup.iopoints[1].red_input_combinator = PLCbuilder.find_CC(built,{"I","1","red"})
+iogroup.iopoints[1].grn_input_combinator = PLCbuilder.find_CC(built,{"I","1","green"})
+iogroup.iopoints[2].red_input_combinator = PLCbuilder.find_CC(built,{"I","2","red"})
+iogroup.iopoints[2].grn_input_combinator = PLCbuilder.find_CC(built,{"I","2","green"})
+iogroup.iopoints[3].red_input_combinator = PLCbuilder.find_CC(built,{"I","3","red"})
+iogroup.iopoints[3].grn_input_combinator = PLCbuilder.find_CC(built,{"I","3","green"})
+iogroup.iopoints[4].red_input_combinator = PLCbuilder.find_CC(built,{"I","4","red"})
+iogroup.iopoints[4].grn_input_combinator = PLCbuilder.find_CC(built,{"I","4","green"})
+
+--combinators for outputs
+iogroup.iopoints[1].red_output_combinator = PLCbuilder.find_CC(built,{"O","1","red"})
+iogroup.iopoints[1].grn_output_combinator = PLCbuilder.find_CC(built,{"O","1","green"})
+iogroup.iopoints[2].red_output_combinator = PLCbuilder.find_CC(built,{"O","2","red"})
+iogroup.iopoints[2].grn_output_combinator = PLCbuilder.find_CC(built,{"O","2","green"})
+iogroup.iopoints[3].red_output_combinator = PLCbuilder.find_CC(built,{"O","3","red"})
+iogroup.iopoints[3].grn_output_combinator = PLCbuilder.find_CC(built,{"O","3","green"})
+iogroup.iopoints[4].red_output_combinator = PLCbuilder.find_CC(built,{"O","4","red"})
+iogroup.iopoints[4].grn_output_combinator = PLCbuilder.find_CC(built,{"O","4","green"})
 
 
-iogroup.iopoints[1].red_change_combinator = PLCbuilder.find_CC(built,{"I","1","red"})
-iogroup.iopoints[1].grn_change_combinator = PLCbuilder.find_CC(built,{"I","1","green"})
-iogroup.iopoints[2].red_change_combinator = PLCbuilder.find_CC(built,{"I","2","red"})
-iogroup.iopoints[2].grn_change_combinator = PLCbuilder.find_CC(built,{"I","2","green"})
-iogroup.iopoints[3].red_change_combinator = PLCbuilder.find_CC(built,{"I","3","red"})
-iogroup.iopoints[3].grn_change_combinator = PLCbuilder.find_CC(built,{"I","3","green"})
-iogroup.iopoints[4].red_change_combinator = PLCbuilder.find_CC(built,{"I","4","red"})
-iogroup.iopoints[4].grn_change_combinator = PLCbuilder.find_CC(built,{"I","4","green"})
+
 
 
 local test=0
@@ -333,7 +346,8 @@ function PLCbuilder.plc_surface(force)
      -- surface.force_generate_chunk_requests()
 
     
-      local bp_string="0eNq1k9FugzAMRf8lz2EalCSCX6mqKlC3swShSkK7ruLf56QRq1a0rQ+DBw7Evr52wpU13QhHi8az+sqwHYxj9frKHB6M7sI3o3tgNXNj47z2OBg2cYZmB++szie+EAodtN5im4EBe7hkJA52r1u4yyymDWdgPHqEW8X4ctmasW/AkjRfqMzZcXAYkcqRTFZxdgmPKTj5JlH8SeInhdWsEAbjtfFZO/QNGu0H+yilXsRNjIBapRxvh27bwJs+ISVQlKPRYBzyPVP780Q305KT8jkn8v+cCP77Pj9OJrpRZGWH9laMKtAGNeN+D3br8IMU89f5WigsnzkRi9upnjgQJEAn9Exuw1TWOc95wfMNjyQTFeFOJBMJYpFIRqI8XsaMQCpRwVcxI5BKJIhChpzj5Lwq0yq5Qg89NfH163J2AutiC0IWVVlVolSVEmo1TZ8UQD/d"
+      local bp_string="0eNqVUtFugzAM/Bc/hwkoQYNfqVAVqNtZglAloV1X5d/npBXrVrSt8JCLY99d7Fyg7Sc8GNIO6gtQN2oL9foClvZa9SGm1YBQg51a65SjUYMXQHqL71BnXiykYo+dM9QlqNHszwmTo9mpDu8qc98IQO3IEV4V4+a80dPQomFqsaAs4DBaipDlmCYpBZzD4oOTHxT5vyh+Y1iJv+/0QJhGwpTvuiXDVfEkYzPttNuh2Vj6YMYsnb8F4WIWDhNxSrukG4eWtHKjeZRcvcgoyivLcokzY79p8U0difM5yV6N2O+Y2z5PsvFLHZDPjGGxh+UTU2ACfhYnblswt85EHv5GRCRvSAZ8QzKikFXG05BVxlgxx+Qdup6yBjkc2NLX6xdwRGOjIVnmVVFVsqjy17JIvf8ELHQErw=="
+
 
       PLCbuilder.build_blueprint(bp_string,{x=0,y=0},force)
 

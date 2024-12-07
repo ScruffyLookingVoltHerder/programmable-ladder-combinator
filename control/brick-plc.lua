@@ -48,9 +48,6 @@ storage.Brick_PLCs[entity.unit_number]=nil
 end
 
 
-
-
-
 function entities_pre_mined(event)
 remove(event,false)
 end
@@ -66,6 +63,19 @@ end
 
 function tick(event)
 
+
+
+local t1=0
+
+
+for num, PLC in pairs(storage.Brick_PLCs) do
+
+local input = PLC.iogroup.iopoints[1].grn_input_combinator
+
+
+
+
+end
 end
 
 
