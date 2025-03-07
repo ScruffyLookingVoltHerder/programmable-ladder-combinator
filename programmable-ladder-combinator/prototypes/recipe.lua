@@ -1,7 +1,7 @@
 data:extend({
     {
         type = "recipe",
-        name = "brick-PLC",
+        name = "PLC",
         enabled = false,
         ingredients = 
         {
@@ -9,24 +9,8 @@ data:extend({
           {type = "item", name = "arithmetic-combinator", amount = 2},
           {type = "item", name = "copper-cable", amount = 4},
         },
-         results = {{type = "item", name = "brick-PLC", amount = 1}} 
+         results = {{type = "item", name = "PLC", amount = 1}} 
       },
-
-
-      {
-        type = "recipe",
-        name = "modular-PLC",
-        enabled = false,
-        ingredients = 
-        {
-          {type = "item", name = "decider-combinator", amount = 2},
-          {type = "item", name = "arithmetic-combinator", amount = 2},
-          {type = "item", name = "electronic-circuit", amount = 2},
-        },
-
-        results = {{type = "item", name = "modular-PLC", amount = 1}} 
-      },
-
 
 
       {

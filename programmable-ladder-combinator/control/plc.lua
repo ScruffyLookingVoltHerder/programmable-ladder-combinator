@@ -1,6 +1,8 @@
 local Event = require('__stdlib2__/stdlib/event/event')
 local PLCbuilder = require("PLCbuilder")
-local filter="brick%-PLC"
+local PLCEditor = require("PLCEditor")
+local UDT_Tags= require("UDT_Tags")
+local filter="PLC"
 
 local coord_1x1 = 0.285
 
@@ -20,14 +22,19 @@ PLCbuilder.initglobal()
 
     local iogroup=PLCbuilder.create_iogroup(entity.position,entity.direction,entity.surface,entity.force)
 
-  
+  local PLC={}
+  PLC.entity=entity
+  PLC.iogroup=iogroup
+  PLC.UDTs=table.deepcopy(UDT_Tags.builtin_UDTs)
+
+  PLC.tags={}
+  UDT_Tags.build_tag(PLC.tags,"IO","IOgroup","Built-in I/O",PLC.UDTs)
+
+  local test=0
+
 
     --Add to Global Table
-    storage.Brick_PLCs[entity.unit_number] = {
-      entity = entity,
-      iogroup=iogroup
-
-    }
+    storage.PLCs[entity.unit_number] = PLC
 
 
 local test=0
@@ -36,14 +43,17 @@ local test=0
 end
 
 function remove(event, create_ghosts)
+  
   PLCbuilder.initglobal()
 local entity=event.entity
 
-local PLC=storage.Brick_PLCs[entity.unit_number]
+local PLC=storage.PLCs[entity.unit_number]
 
 PLCbuilder.remove_iogroup(PLC.iogroup, create_ghosts)
 
-storage.Brick_PLCs[entity.unit_number]=nil
+storage.PLCs[entity.unit_number]=nil
+
+
 
 end
 
@@ -68,7 +78,8 @@ function tick(event)
 local t1=0
 
 
-for num, PLC in pairs(storage.Brick_PLCs) do
+if storage.PLCs then
+for num, PLC in pairs(storage.PLCs) do
 
 local input = PLC.iogroup.iopoints[1].grn_input_combinator
 
@@ -77,7 +88,7 @@ local input = PLC.iogroup.iopoints[1].grn_input_combinator
 
 end
 end
-
+end
 
 function gui_open(event)
 
@@ -115,27 +126,13 @@ Event.register("PLC-click", function(event)
  
   local selected = player.selected
 
-  if selected and selected.name== "brick-PLC" and
+  if selected and selected.name== "PLC" and
   player.is_cursor_empty()  then
 
 player.print("PLC clicked")
 
---local PLC=global.Brick_PLCs[selected.unit_number]
-
---player.selected=nil
-
---local iopoint= PLC.iopoint_0
-
---local sigs=iopoint.get_merged_signals()
-
-local t=0
-  
+PLCEditor.open_editor(player, selected)
 
 end
-
-
-
 end)
-
-
 

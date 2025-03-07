@@ -2,29 +2,16 @@ data:extend({
 
     {
         type = "item-with-tags",
-        name = "brick-PLC",
+        name = "PLC",
         icon = "__programmable-ladder-combinator__/graphics/icons/BrickPLC.png",
         icon_size = 32,
         subgroup = "circuit-network",
         stack_size = 100,
-        place_result = "brick-PLC"
+        place_result = "PLC"
         },
         
 })
 
-data:extend({
-
-    {
-        type = "item",
-        name = "modular-PLC",
-        icon = "__programmable-ladder-combinator__/graphics/icons/ModularPLC.png",
-        icon_size = 32,
-        subgroup = "circuit-network",
-        stack_size = 100,
-        
-        },
-        
-})
 
 data:extend({
 

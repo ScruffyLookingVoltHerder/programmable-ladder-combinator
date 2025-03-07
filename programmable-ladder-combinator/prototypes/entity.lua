@@ -81,9 +81,9 @@ local brick_processor_image = {
 data:extend({  {
 
     type = "simple-entity-with-owner",
-    name = "brick-PLC",
+    name = "PLC",
     picture = brick_processor_image,
-    minable = { mining_time = 1, result = "brick-PLC" },
+    minable = { mining_time = 1, result = "PLC" },
     render_layer = 'floor-mechanics',
     max_health = 250,
     icons = {

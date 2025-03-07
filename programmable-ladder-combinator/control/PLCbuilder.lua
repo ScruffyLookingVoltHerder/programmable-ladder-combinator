@@ -59,13 +59,15 @@ local built=PLCbuilder.build_blueprint(bp_string,spiral_pos,force)
 iogroup.hidden_parts=built
 
 
+
+--find combinators from built blueprint
+
 --combinators for connecting the points in the iogroup to the common change detection circuit
 iogroup.change_combinator = PLCbuilder.find_CC(built,{"C","5"})
 iogroup.iopoints[1].common_change_combinator = PLCbuilder.find_CC(built,{"C","1"})
 iogroup.iopoints[2].common_change_combinator = PLCbuilder.find_CC(built,{"C","2"})
 iogroup.iopoints[3].common_change_combinator = PLCbuilder.find_CC(built,{"C","3"})
 iogroup.iopoints[4].common_change_combinator = PLCbuilder.find_CC(built,{"C","4"})
-
 
 -- Combinators for detecting individual point changes
 iogroup.iopoints[1].red_change_combinator = PLCbuilder.find_CC(built,{"M","1","red"})
@@ -98,10 +100,42 @@ iogroup.iopoints[4].red_output_combinator = PLCbuilder.find_CC(built,{"O","4","r
 iogroup.iopoints[4].grn_output_combinator = PLCbuilder.find_CC(built,{"O","4","green"})
 
 
+-- connect output combinators to outer points
+local c1,c2
+
+c1=iogroup.iopoints[1].outer_point.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c2= iogroup.iopoints[1].red_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c1.connect_to(c2, false)
+
+c1=iogroup.iopoints[1].outer_point.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c2= iogroup.iopoints[1].grn_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c1.connect_to(c2, false)
+
+c1=iogroup.iopoints[2].outer_point.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c2= iogroup.iopoints[2].red_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c1.connect_to(c2, false)
+
+c1=iogroup.iopoints[2].outer_point.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c2= iogroup.iopoints[2].grn_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c1.connect_to(c2, false)
+
+c1=iogroup.iopoints[3].outer_point.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c2= iogroup.iopoints[3].red_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c1.connect_to(c2, false)
+
+c1=iogroup.iopoints[3].outer_point.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c2= iogroup.iopoints[3].grn_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c1.connect_to(c2, false)
+
+c1=iogroup.iopoints[4].outer_point.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c2= iogroup.iopoints[4].red_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_red,true)
+c1.connect_to(c2, false)
+
+c1=iogroup.iopoints[4].outer_point.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c2= iogroup.iopoints[4].grn_output_combinator.get_wire_connector(defines.wire_connector_id.circuit_green,true)
+c1.connect_to(c2, false)
 
 
-
-local test=0
 
 return iogroup
 end
@@ -324,7 +358,16 @@ function PLCbuilder.remove_iogroup(iogroup, create_ghosts)
 
       spiral[iogroup.spiral_index]=nil
 
+     for key, value in pairs(iogroup.hidden_parts) do
+      
+      if value.name ~="substation" then
+        value.destroy()
+      end
       local test=0
+
+     end
+
+      
       
 end
 
@@ -358,8 +401,7 @@ end
 
 
 function PLCbuilder.initglobal()
-  storage.BrickPLCs = storage.Brick_PLCs or {}
-  storage.Modular_PLCs = storage.Modular_PLCs or {}
+  storage.PLCs = storage.PLCs or {}
   storage.Remote_IOs = storage.Remote_IOs or {}
   storage.spirals = storage.spirals or {}
 
@@ -368,14 +410,8 @@ end
 function PLCbuilder.build_blueprint(bp_string,position,force)
 
 
-  
-
   local surface_name='PLC-event-surface-'..force.name
   local surface =game.surfaces[surface_name]
-
-  
-
-
 
   local inventory=game.create_inventory(1)
   local bp=inventory[1]
@@ -473,7 +509,5 @@ function PLCbuilder.find_CC(entities,signals)
 
   return nil
 end
-
-
 
 return PLCbuilder

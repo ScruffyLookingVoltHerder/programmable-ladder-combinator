@@ -1,5 +1,5 @@
 local Event = require('__stdlib2__/stdlib/event/event')
-local brickplc = require(".control.brick-plc")
+local brickplc = require(".control.plc")
 --test
 function init_tables()
     --Create global tables

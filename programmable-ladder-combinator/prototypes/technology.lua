@@ -8,7 +8,7 @@ data:extend({
         {
           {
               type = "unlock-recipe",
-              recipe = "brick-PLC"
+              recipe = "PLC"
           },
         },
         prerequisites = {"circuit-network",},
@@ -35,10 +35,6 @@ data:extend({
             type = "unlock-recipe",
             recipe = "remote-io"
         },
-        {
-          type = "unlock-recipe",
-          recipe = "modular-PLC"
-      },
       },
       prerequisites = {"PLCTech",},
       unit =
